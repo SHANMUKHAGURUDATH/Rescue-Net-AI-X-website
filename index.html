@@ -96,6 +96,55 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 .tag-flood{background:rgba(59,142,255,0.15);color:#74aaff} .tag-fire{background:rgba(255,124,42,0.15);color:var(--orange)} .tag-cyclone{background:rgba(255,199,79,0.15);color:var(--yellow)} .tag-earthquake{background:rgba(255,100,100,0.15);color:var(--red2)} .tag-other{background:rgba(150,150,150,0.15);color:#aaa}
 .alert-time { font-size:10px; color:var(--muted); margin-left:auto; }
 
+/* ── SECTION PANELS ── */
+.section-panel { display:none; flex-direction:column; gap:1.5rem; }
+.section-panel.active { display:flex; }
+.page-title { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; display:flex; align-items:center; gap:10px; }
+.page-title span { font-size:1.4rem; }
+.full-card { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.full-card-header { padding:14px 18px; border-bottom:1px solid var(--border); font-family:'Syne',sans-serif; font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:space-between; }
+.full-card-body { padding:16px; }
+.mp-search { width:100%; background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--text); font-size:13px; outline:none; font-family:'DM Sans',sans-serif; margin-bottom:12px; }
+.mp-search:focus { border-color:rgba(255,59,59,0.5); }
+.mp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
+.mp-card { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+.mp-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.mp-name { font-size:13px; font-weight:500; }
+.mp-status { font-size:10px; padding:2px 8px; border-radius:10px; font-family:'DM Mono',monospace; }
+.mp-status.missing { background:rgba(255,59,59,0.15); color:var(--red2); }
+.mp-status.found { background:rgba(42,255,143,0.15); color:var(--green); }
+.mp-status.searching { background:rgba(255,199,79,0.15); color:var(--yellow); }
+.mp-detail { font-size:11px; color:var(--muted); line-height:1.6; }
+.mp-add-btn { background:rgba(255,59,59,0.12); border:1px solid rgba(255,59,59,0.35); color:var(--red2); padding:8px 16px; border-radius:7px; font-family:'Syne',sans-serif; font-size:12px; font-weight:600; cursor:pointer; letter-spacing:0.04em; transition:all 0.2s; }
+.mp-add-btn:hover { background:rgba(255,59,59,0.2); }
+.res-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+.res-big-card { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:14px; }
+.res-big-label { font-size:11px; color:var(--muted); margin-bottom:4px; }
+.res-big-val { font-family:'DM Mono',monospace; font-size:1.8rem; font-weight:500; margin-bottom:8px; }
+.res-big-bar { height:6px; background:var(--bg2); border-radius:3px; overflow:hidden; }
+.res-big-bar-fill { height:100%; border-radius:3px; transition:width 0.5s; }
+.res-big-action { width:100%; background:transparent; border:1px solid var(--border); color:var(--muted); padding:6px; border-radius:6px; font-size:11px; cursor:pointer; margin-top:8px; font-family:'DM Sans',sans-serif; transition:all 0.2s; }
+.res-big-action:hover { border-color:var(--border2); color:var(--text); }
+.analytics-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.analytics-card { background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:16px; }
+.analytics-title { font-size:12px; color:var(--muted); font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+.bar-chart { display:flex; flex-direction:column; gap:8px; }
+.bar-row { display:flex; align-items:center; gap:8px; font-size:12px; }
+.bar-label { width:90px; color:var(--muted); flex-shrink:0; }
+.bar-track { flex:1; height:10px; background:var(--bg2); border-radius:5px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:5px; transition:width 0.8s cubic-bezier(0.4,0,0.2,1); }
+.bar-val { width:36px; text-align:right; font-family:'DM Mono',monospace; font-size:11px; color:var(--text); }
+.sos-panel-full { display:flex; flex-direction:column; gap:12px; }
+.sos-queue { display:flex; flex-direction:column; gap:6px; max-height:400px; overflow-y:auto; }
+.sos-queue-item { background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; align-items:flex-start; gap:10px; cursor:pointer; transition:background 0.15s; }
+.sos-queue-item:hover { background:rgba(255,59,59,0.06); border-color:rgba(255,59,59,0.25); }
+.sos-q-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; margin-top:3px; }
+.sos-q-body { flex:1; }
+.sos-q-loc { font-size:13px; font-weight:500; margin-bottom:3px; }
+.sos-q-msg { font-size:11px; color:var(--muted); line-height:1.5; }
+.sos-q-meta { display:flex; align-items:center; gap:6px; margin-top:4px; }
+.sos-q-score { font-family:'DM Mono',monospace; font-size:11px; padding:1px 6px; border-radius:4px; }
+
 /* ── SOS INPUT ── */
 .sos-box { padding:16px; border-bottom:1px solid var(--border); }
 .sos-label { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); font-family:'DM Mono',monospace; margin-bottom:8px; }
@@ -202,12 +251,12 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
   <aside class="sidebar">
     <div class="sidebar-label">Navigation</div>
     <div class="sidebar-section">
-      <div class="nav-item active" onclick="setNav(this)"><span class="nav-icon">🗺</span> Live Map <span class="badge" id="sos-count">—</span></div>
-      <div class="nav-item" onclick="setNav(this)"><span class="nav-icon">🆘</span> SOS Intake</div>
-      <div class="nav-item" onclick="setNav(this)"><span class="nav-icon">🤖</span> AI Triage</div>
-      <div class="nav-item" onclick="setNav(this)"><span class="nav-icon">🔍</span> Missing Persons</div>
-      <div class="nav-item" onclick="setNav(this)"><span class="nav-icon">📦</span> Resources</div>
-      <div class="nav-item" onclick="setNav(this)"><span class="nav-icon">📊</span> Analytics</div>
+      <div class="nav-item active" onclick="switchPanel('livemap',this)"><span class="nav-icon">🗺</span> Live Map <span class="badge" id="sos-count">—</span></div>
+      <div class="nav-item" onclick="switchPanel('sos',this)"><span class="nav-icon">🆘</span> SOS Intake</div>
+      <div class="nav-item" onclick="switchPanel('triage',this)"><span class="nav-icon">🤖</span> AI Triage</div>
+      <div class="nav-item" onclick="switchPanel('missing',this)"><span class="nav-icon">🔍</span> Missing Persons</div>
+      <div class="nav-item" onclick="switchPanel('resources',this)"><span class="nav-icon">📦</span> Resources</div>
+      <div class="nav-item" onclick="switchPanel('analytics',this)"><span class="nav-icon">📊</span> Analytics</div>
     </div>
     <div class="sidebar-label">Live Stats</div>
     <div class="sidebar-section">
@@ -225,6 +274,10 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
 
   <!-- MAIN -->
   <main class="main">
+
+    <!-- ══ LIVE MAP PANEL ══ -->
+    <div class="section-panel active" id="panel-livemap">
+
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-card">
@@ -343,6 +396,195 @@ header { display:flex; align-items:center; justify-content:space-between; paddin
         </div>
       </div>
     </div>
+    </div><!-- end panel-livemap -->
+
+    <!-- ══ SOS INTAKE PANEL ══ -->
+    <div class="section-panel" id="panel-sos">
+      <div class="page-title"><span>🆘</span> SOS Intake — All Active Reports</div>
+      <div class="full-card">
+        <div class="full-card-header">
+          <span>Incoming SOS Queue</span>
+          <span id="sos-panel-count" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">Loading...</span>
+        </div>
+        <div class="full-card-body">
+          <div class="sos-queue" id="sosPanelQueue">
+            <div style="text-align:center;color:var(--muted);font-size:12px;padding:20px">Loading SOS reports...</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-card">
+        <div class="full-card-header">Submit New SOS Report</div>
+        <div class="full-card-body">
+          <textarea class="sos-input" id="sosInputIntake" placeholder="Describe the emergency — location, number of people, condition..." style="min-height:100px;width:100%"></textarea>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+            <input type="text" placeholder="Victim Name" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px;outline:none;font-family:'DM Sans',sans-serif" />
+            <input type="tel" placeholder="Phone Number" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px;outline:none;font-family:'DM Sans',sans-serif" />
+          </div>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="sos-submit" onclick="switchToTriageWithText()">⚡ SEND & ANALYZE</button>
+            <button class="sos-clear" onclick="document.getElementById('sosInputIntake').value=''">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ AI TRIAGE PANEL ══ -->
+    <div class="section-panel" id="panel-triage">
+      <div class="page-title"><span>🤖</span> AI Triage Engine</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="full-card">
+          <div class="full-card-header">Submit Emergency for AI Analysis</div>
+          <div class="full-card-body">
+            <div class="sos-label">Emergency Description</div>
+            <textarea class="sos-input" id="sosInputTriage" placeholder="Describe what's happening, location, people involved..." style="min-height:120px;width:100%"></textarea>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+              <input id="triageNameFull" type="text" placeholder="Victim Name (optional)" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+              <input id="triagePhoneFull" type="tel" placeholder="Phone (optional)" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+            </div>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="sos-submit" id="triageBtnFull" onclick="runTriageFull()">⚡ ANALYZE & TRIAGE</button>
+              <button class="sos-clear" onclick="clearTriageFull()">Clear</button>
+            </div>
+            <div class="ai-thinking" id="aiThinkingFull" style="margin-top:10px">
+              <div class="thinking-dots"><span></span><span></span><span></span></div>
+              Claude AI analyzing emergency...
+            </div>
+          </div>
+        </div>
+        <div class="full-card">
+          <div class="full-card-header">Triage Result</div>
+          <div class="full-card-body" id="triageResultFull">
+            <div style="text-align:center;color:var(--muted);font-size:12px;padding:30px 0">Submit an emergency report to see AI triage results here.</div>
+          </div>
+        </div>
+      </div>
+      <div class="full-card">
+        <div class="full-card-header">Recent Triage History</div>
+        <div class="full-card-body">
+          <div id="triageHistory" style="max-height:280px;overflow-y:auto">
+            <div style="text-align:center;color:var(--muted);font-size:12px;padding:20px">Triage history will appear here after analyses.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ MISSING PERSONS PANEL ══ -->
+    <div class="section-panel" id="panel-missing">
+      <div class="page-title"><span>🔍</span> Missing Persons Registry</div>
+      <div class="full-card">
+        <div class="full-card-header">
+          <span>Missing Persons Database</span>
+          <button class="mp-add-btn" onclick="showAddMissingForm()">+ Report Missing Person</button>
+        </div>
+        <div class="full-card-body">
+          <input class="mp-search" type="text" placeholder="Search by name, area, age..." oninput="filterMissingPersons(this.value)" />
+          <div class="mp-grid" id="missingPersonsGrid"></div>
+        </div>
+      </div>
+      <div class="full-card" id="addMissingForm" style="display:none">
+        <div class="full-card-header">Report a Missing Person</div>
+        <div class="full-card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
+            <input id="mpName" type="text" placeholder="Full Name *" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+            <input id="mpAge" type="number" placeholder="Age" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+            <input id="mpArea" type="text" placeholder="Last Seen Area *" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+            <input id="mpContact" type="text" placeholder="Contact Person" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+            <input id="mpPhone" type="tel" placeholder="Contact Phone" style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:12px;outline:none;font-family:'DM Sans',sans-serif" />
+          </div>
+          <textarea id="mpDesc" placeholder="Description — clothing, physical features, last seen time..." class="sos-input" style="min-height:60px;width:100%;margin-bottom:8px"></textarea>
+          <div style="display:flex;gap:8px">
+            <button class="sos-submit" onclick="submitMissingPerson()">📋 Register Missing Person</button>
+            <button class="sos-clear" onclick="document.getElementById('addMissingForm').style.display='none'">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ RESOURCES PANEL ══ -->
+    <div class="section-panel" id="panel-resources">
+      <div class="page-title"><span>📦</span> Resource Management</div>
+      <div class="stats-bar">
+        <div class="stat-card"><div class="stat-card-label">Rescue Boats</div><div class="stat-card-val" style="color:var(--blue)">12</div><div class="stat-card-sub">7 deployed</div></div>
+        <div class="stat-card"><div class="stat-card-label">Ambulances</div><div class="stat-card-val" style="color:var(--red2)">7</div><div class="stat-card-sub">5 active</div></div>
+        <div class="stat-card"><div class="stat-card-label">Shelter Beds</div><div class="stat-card-val" style="color:var(--green)">2840</div><div class="stat-card-sub">73% occupied</div></div>
+        <div class="stat-card"><div class="stat-card-label">Food Packets</div><div class="stat-card-val" style="color:var(--yellow)">6200</div><div class="stat-card-sub">Distributed today</div></div>
+      </div>
+      <div class="full-card">
+        <div class="full-card-header">Detailed Resource Inventory</div>
+        <div class="full-card-body">
+          <div class="res-grid" id="resourcesFullGrid"></div>
+        </div>
+      </div>
+      <div class="full-card">
+        <div class="full-card-header">Shelter Status</div>
+        <div class="full-card-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px" id="shelterCards"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ANALYTICS PANEL ══ -->
+    <div class="section-panel" id="panel-analytics">
+      <div class="page-title"><span>📊</span> Analytics &amp; Insights</div>
+      <div class="stats-bar">
+        <div class="stat-card"><div class="stat-card-label">Total SOS Today</div><div class="stat-card-val" style="color:var(--red2)">—</div><div class="stat-card-sub">Across all districts</div></div>
+        <div class="stat-card"><div class="stat-card-label">Avg Response Time</div><div class="stat-card-val" style="color:var(--cyan)">8m</div><div class="stat-card-sub"><span style="color:var(--green)">↓ 2m</span> improved</div></div>
+        <div class="stat-card"><div class="stat-card-label">Rescue Rate</div><div class="stat-card-val" style="color:var(--green)">94%</div><div class="stat-card-sub">142 rescued / 151 total</div></div>
+        <div class="stat-card"><div class="stat-card-label">Active Districts</div><div class="stat-card-val" style="color:var(--yellow)">4</div><div class="stat-card-sub">Vizag, VZM, Kakinada, Eluru</div></div>
+      </div>
+      <div class="analytics-grid">
+        <div class="analytics-card">
+          <div class="analytics-title">Incidents by Type</div>
+          <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">Flood</div><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--blue)"></div></div><div class="bar-val">65%</div></div>
+            <div class="bar-row"><div class="bar-label">Fire</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--orange)"></div></div><div class="bar-val">20%</div></div>
+            <div class="bar-row"><div class="bar-label">Cyclone</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:var(--yellow)"></div></div><div class="bar-val">10%</div></div>
+            <div class="bar-row"><div class="bar-label">Other</div><div class="bar-track"><div class="bar-fill" style="width:5%;background:var(--muted)"></div></div><div class="bar-val">5%</div></div>
+          </div>
+        </div>
+        <div class="analytics-card">
+          <div class="analytics-title">SOS by Priority Level</div>
+          <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">Critical</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--red)"></div></div><div class="bar-val">30%</div></div>
+            <div class="bar-row"><div class="bar-label">High</div><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--orange)"></div></div><div class="bar-val">45%</div></div>
+            <div class="bar-row"><div class="bar-label">Medium</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--yellow)"></div></div><div class="bar-val">20%</div></div>
+            <div class="bar-row"><div class="bar-label">Low</div><div class="bar-track"><div class="bar-fill" style="width:5%;background:var(--green)"></div></div><div class="bar-val">5%</div></div>
+          </div>
+        </div>
+        <div class="analytics-card">
+          <div class="analytics-title">Response by District</div>
+          <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">Vizag</div><div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--cyan)"></div></div><div class="bar-val">70</div></div>
+            <div class="bar-row"><div class="bar-label">VZM</div><div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--cyan)"></div></div><div class="bar-val">45</div></div>
+            <div class="bar-row"><div class="bar-label">Kakinada</div><div class="bar-track"><div class="bar-fill" style="width:18%;background:var(--cyan)"></div></div><div class="bar-val">18</div></div>
+            <div class="bar-row"><div class="bar-label">Eluru</div><div class="bar-track"><div class="bar-fill" style="width:9%;background:var(--cyan)"></div></div><div class="bar-val">9</div></div>
+          </div>
+        </div>
+        <div class="analytics-card">
+          <div class="analytics-title">Teams Performance (rescues)</div>
+          <div class="bar-chart">
+            <div class="bar-row"><div class="bar-label">Alpha</div><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--green)"></div></div><div class="bar-val">38</div></div>
+            <div class="bar-row"><div class="bar-label">Bravo</div><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--green)"></div></div><div class="bar-val">31</div></div>
+            <div class="bar-row"><div class="bar-label">Boat 3</div><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--green)"></div></div><div class="bar-val">23</div></div>
+            <div class="bar-row"><div class="bar-label">Medical</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--green)"></div></div><div class="bar-val">50</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="full-card">
+        <div class="full-card-header">AI Prediction Accuracy Log</div>
+        <div class="full-card-body" style="font-size:12px;color:var(--muted);line-height:2">
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:8px 20px">
+            <span style="color:var(--green)">✓</span><span>Sector 4 flood prediction — NH-16 km 12</span><span style="font-family:'DM Mono',monospace;color:var(--green)">87% conf · Verified</span>
+            <span style="color:var(--green)">✓</span><span>Shelter 2 capacity overflow warning</span><span style="font-family:'DM Mono',monospace;color:var(--green)">93% conf · Verified</span>
+            <span style="color:var(--yellow)">~</span><span>Dwaraka Nagar fire spread northwest</span><span style="font-family:'DM Mono',monospace;color:var(--yellow)">71% conf · Monitoring</span>
+            <span style="color:var(--muted)">○</span><span>Cyclone landfall — Kakinada coast</span><span style="font-family:'DM Mono',monospace;color:var(--muted)">64% conf · Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- RIGHT PANEL -->
@@ -921,9 +1163,198 @@ function filterAlerts(type, el) {
   showToast(`🔍 Filter: ${type}`, `${filtered.length} ${type} incidents`);
 }
 
+function switchPanel(name, el) {
+  // Update nav highlight
+  document.querySelectorAll('.nav-item').forEach(x => x.classList.remove('active'));
+  if (el) el.classList.add('active');
+
+  // Show correct panel
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('panel-' + name);
+  if (target) target.classList.add('active');
+
+  // Panel-specific init
+  if (name === 'sos') renderSOSPanel();
+  if (name === 'missing') renderMissingPersons();
+  if (name === 'resources') renderResourcesFull();
+  if (name === 'triage') {
+    const txt = document.getElementById('sosInput')?.value;
+    if (txt) document.getElementById('sosInputTriage').value = txt;
+  }
+}
+
 function setNav(el) {
   document.querySelectorAll('.nav-item').forEach(x => x.classList.remove('active'));
   el.classList.add('active');
+}
+
+// ── SOS Panel ─────────────────────────────────────────────
+function renderSOSPanel() {
+  const queue = document.getElementById('sosPanelQueue');
+  const list = alerts.length ? alerts : getFallbackAlerts();
+  document.getElementById('sos-panel-count').textContent = list.length + ' Active';
+  queue.innerHTML = list.map((a, i) => {
+    const score = a.aiAnalysis?.score || a.score || 0;
+    const type  = a.aiAnalysis?.disasterType || a.type || 'other';
+    const loc   = a.locationText || a.location || 'Unknown';
+    const msg   = a.rawMessage || a.desc || '';
+    const color = score >= 80 ? 'var(--red)' : score >= 60 ? 'var(--orange)' : 'var(--yellow)';
+    const scoreClass = score >= 80 ? 's-critical' : score >= 60 ? 's-high' : 's-medium';
+    return `<div class="sos-queue-item" onclick="selectAlertByIndex(${i});switchPanel('triage',null)">
+      <div class="sos-q-dot" style="background:${color}"></div>
+      <div class="sos-q-body">
+        <div class="sos-q-loc">${loc}</div>
+        <div class="sos-q-msg">${msg.slice(0,120)}...</div>
+        <div class="sos-q-meta">
+          <span class="alert-tag tag-${type}">${type.toUpperCase()}</span>
+          <span class="sos-q-score alert-score ${scoreClass}">${score}/100</span>
+          <span style="font-size:10px;color:var(--muted);margin-left:auto">${getTimeAgo(new Date(a.createdAt||Date.now()))}</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function switchToTriageWithText() {
+  const txt = document.getElementById('sosInputIntake').value;
+  if (txt) {
+    document.getElementById('sosInputTriage').value = txt;
+  }
+  switchPanel('triage', null);
+  document.querySelectorAll('.nav-item')[2]?.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach((x,i)=>{if(i!==2)x.classList.remove('active')});
+}
+
+// ── Full Triage Panel ─────────────────────────────────────
+function runTriageFull() {
+  const txt  = document.getElementById('sosInputTriage').value.trim();
+  if (!txt) { showToast('⚠ Empty', 'Please enter an emergency description.'); return; }
+  document.getElementById('sosInput').value = txt;
+  document.getElementById('victimNameInput').value = document.getElementById('triageNameFull').value;
+  document.getElementById('victimPhoneInput').value = document.getElementById('triagePhoneFull').value;
+  runTriage();
+  // Mirror result to full panel
+  const checkResult = setInterval(() => {
+    const r = document.getElementById('triageResult');
+    if (r && r.classList.contains('show')) {
+      clearInterval(checkResult);
+      document.getElementById('triageResultFull').innerHTML = r.innerHTML;
+    }
+  }, 500);
+}
+
+function clearTriageFull() {
+  document.getElementById('sosInputTriage').value = '';
+  document.getElementById('triageNameFull').value = '';
+  document.getElementById('triagePhoneFull').value = '';
+  document.getElementById('triageResultFull').innerHTML = '<div style="text-align:center;color:var(--muted);font-size:12px;padding:30px 0">Submit an emergency report to see AI triage results here.</div>';
+}
+
+// ── Missing Persons ───────────────────────────────────────
+let missingPersons = [
+  { id:1, name:'Lakshmi Devi', age:68, area:'MVP Colony, Vizag', status:'missing', contact:'Ravi Kumar', phone:'9876543210', desc:'Wore blue saree. Last seen near flooded road at 6am.', time:'2h ago' },
+  { id:2, name:'Raju (child)', age:8, area:'Dwaraka Nagar, Vizag', status:'searching', contact:'Sujatha', phone:'9988776655', desc:'School uniform, black bag. Missing since yesterday evening.', time:'14h ago' },
+  { id:3, name:'Anand Rao', age:45, area:'Gajuwaka, Vizag', status:'found', contact:'Meera Rao', phone:'9123456789', desc:'Found at Shelter 3, good condition.', time:'30m ago' },
+  { id:4, name:'Parvathi', age:72, area:'Nellimarla, VZM', status:'missing', contact:'Suresh', phone:'8765432109', desc:'Elderly, uses walking stick. Grey saree.', time:'5h ago' },
+];
+
+function renderMissingPersons(filter='') {
+  const grid = document.getElementById('missingPersonsGrid');
+  const list = missingPersons.filter(p =>
+    !filter || p.name.toLowerCase().includes(filter.toLowerCase()) ||
+    p.area.toLowerCase().includes(filter.toLowerCase())
+  );
+  grid.innerHTML = list.map(p => `
+    <div class="mp-card">
+      <div class="mp-card-top">
+        <div class="mp-name">${p.name} ${p.age ? '· ' + p.age + 'y' : ''}</div>
+        <div class="mp-status ${p.status}">${p.status.toUpperCase()}</div>
+      </div>
+      <div class="mp-detail">
+        📍 ${p.area}<br>
+        👤 Contact: ${p.contact} · ${p.phone}<br>
+        📝 ${p.desc}<br>
+        <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)">${p.time}</span>
+      </div>
+      ${p.status !== 'found' ? `<button onclick="markFound(${p.id})" style="margin-top:8px;width:100%;background:rgba(42,255,143,0.1);border:1px solid rgba(42,255,143,0.3);color:var(--green);padding:5px;border-radius:5px;font-size:11px;cursor:pointer;font-family:'Syne',sans-serif">✓ Mark as Found</button>` : ''}
+    </div>
+  `).join('') || '<div style="color:var(--muted);font-size:12px;text-align:center;padding:20px">No results found.</div>';
+}
+
+function filterMissingPersons(q) { renderMissingPersons(q); }
+
+function showAddMissingForm() {
+  const f = document.getElementById('addMissingForm');
+  f.style.display = f.style.display === 'none' ? 'block' : 'none';
+}
+
+function submitMissingPerson() {
+  const name = document.getElementById('mpName').value.trim();
+  const area = document.getElementById('mpArea').value.trim();
+  if (!name || !area) { showToast('⚠ Required', 'Name and Last Seen Area are required.'); return; }
+  missingPersons.unshift({
+    id: Date.now(), name, age: document.getElementById('mpAge').value || '',
+    area, status: 'missing',
+    contact: document.getElementById('mpContact').value || '—',
+    phone: document.getElementById('mpPhone').value || '—',
+    desc: document.getElementById('mpDesc').value || 'No description.',
+    time: 'Just now'
+  });
+  showToast('📋 Registered', `${name} added to missing persons registry.`);
+  document.getElementById('addMissingForm').style.display = 'none';
+  renderMissingPersons();
+}
+
+function markFound(id) {
+  const p = missingPersons.find(x => x.id === id);
+  if (p) { p.status = 'found'; p.time = 'Just now'; showToast('✅ Found!', `${p.name} has been marked as found.`); renderMissingPersons(); }
+}
+
+function getFallbackAlerts() {
+  return [
+    { location:'MVP Colony, Vizag', score:97, type:'flood', desc:'Grandmother and 2 children trapped upstairs. Water rising fast.', time:'2m ago' },
+    { location:'Dwaraka Nagar, Vizag', score:94, type:'fire', desc:'Fire on 2nd floor. 2 people unable to evacuate.', time:'5m ago' },
+    { location:'Gajuwaka, Vizag', score:82, type:'flood', desc:'Elderly woman knee-deep in water. Cannot walk. Alone.', time:'8m ago' },
+  ];
+}
+
+// ── Resources Full Panel ──────────────────────────────────
+function renderResourcesFull() {
+  const resources = [
+    { name:'Rescue Boats', val:12, used:7, color:'var(--blue)' },
+    { name:'Ambulances', val:7, used:5, color:'var(--red2)' },
+    { name:'Shelter Beds', val:2840, used:2073, color:'var(--green)' },
+    { name:'Food Packets', val:6200, used:3800, color:'var(--yellow)' },
+    { name:'Oxygen Cylinders', val:45, used:30, color:'var(--cyan)' },
+    { name:'Medicine Kits', val:180, used:92, color:'var(--orange)' },
+  ];
+  document.getElementById('resourcesFullGrid').innerHTML = resources.map(r => {
+    const pct = Math.round((r.used/r.val)*100);
+    return `<div class="res-big-card">
+      <div class="res-big-label">${r.name}</div>
+      <div class="res-big-val" style="color:${r.color}">${r.val - r.used}<span style="font-size:1rem;color:var(--muted)"> / ${r.val}</span></div>
+      <div class="res-big-bar"><div class="res-big-bar-fill" style="width:${pct}%;background:${r.color}"></div></div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">${pct}% in use · ${r.val - r.used} available</div>
+      <button class="res-big-action">📋 Request Resupply</button>
+    </div>`;
+  }).join('');
+
+  const shelters = [
+    { name:'Shelter 1 — Dwaraka Nagar', cap:200, occ:120, status:'ok' },
+    { name:'Shelter 2 — MVP Colony', cap:200, occ:186, status:'warn' },
+    { name:'Shelter 3 — Gajuwaka', cap:150, occ:95, status:'ok' },
+    { name:'Shelter 4 — Nellimarla', cap:100, occ:42, status:'ok' },
+  ];
+  document.getElementById('shelterCards').innerHTML = shelters.map(s => {
+    const pct = Math.round((s.occ/s.cap)*100);
+    const col = s.status === 'warn' ? 'var(--orange)' : 'var(--green)';
+    return `<div class="res-big-card">
+      <div class="res-big-label">${s.name}</div>
+      <div class="res-big-val" style="color:${col}">${s.occ}<span style="font-size:1rem;color:var(--muted)"> / ${s.cap}</span></div>
+      <div class="res-big-bar"><div class="res-big-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">${pct}% capacity${s.status==='warn'?' · ⚠ Nearly full':''}</div>
+    </div>`;
+  }).join('');
 }
 
 function toggleLayer(btn) { btn.classList.toggle('active'); }
